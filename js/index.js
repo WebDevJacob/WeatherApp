@@ -195,3 +195,8 @@ locBtnSlider.addEventListener("touchmove", (e) => {
     }
   }
 });
+
+console.log(
+  `%cMade by Jacob 🦆`,
+  "font-size: 1rem;background-color: #111; padding:0.5rem; border-radius: 0.25rem; border: 3px solid #76baf9"
+);
