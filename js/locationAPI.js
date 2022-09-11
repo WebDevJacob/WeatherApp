@@ -111,7 +111,8 @@ export function setLocationInfoText(obj) {
 
   let locationText = `${name} <br> ${country}Timezone: ${timeZone} <br>Position: ${lat}° / ${long}°`;
 
-  if (JSON.parse(localStorage.getItem("prefersDeviceLocation")) == false) {
+  let prefersDL = JSON.parse(localStorage.getItem("prefersDeviceLocation"));
+  if (prefersDL == false || prefersDL == null) {
     locationText += ` <i class="bi bi-arrow-bar-up"></i> ${elevation}m`;
   } else {
     // onload add active class to show that user uses device location
