@@ -1,5 +1,6 @@
 # Weather App
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ed1822fd-5cac-4698-8cbe-596dea4e321e/deploy-status)](https://app.netlify.com/sites/weatherbyjacob/deploys)
 <img src="./icons/app-logo.png" width='92px' height='92px' align="right">
 
 - Data by [open-meteo.com](https://open-meteo.com/en/)
