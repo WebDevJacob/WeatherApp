@@ -1,0 +1,24 @@
+$clr-body: hsl(0, 0%, 11%);
+$clr-secondary: hsl(0, 0%, 13%);
+$clr-card-dark: hsl(0, 0%, 15%);
+
+$clr-accent-light: hsl(209, 92%, 72%);
+
+$clr-grey: #dedede;
+$clr-text-light: #fff;
+
+$warm-gradient: linear-gradient(
+  to right,
+  hsl(21, 100%, 50%),
+  hsl(40, 100%, 50%)
+);
+
+$dark-gradient: radial-gradient(
+  circle,
+  hsl(0, 0%, 37%) 0%,
+  hsl(0, 0%, 16%) 92%
+);
+
+$clr-warning: hsl(46, 100%, 50%);
+$clr-success: hsl(120, 100%, 25%);
+$clr-error: hsl(0, 100%, 40%);

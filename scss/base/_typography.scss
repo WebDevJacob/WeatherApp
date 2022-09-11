@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700&display=swap");
+
+* {
+  font-family: "Inter", sans-serif;
+  color: $clr-text-light;
+}
+
+html {
+  font-size: 12px;
+}
+
+h2 {
+  font-size: calc(1rem * 1.618);
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: 1rem;
+  margin: 2rem 0 -1rem 0;
+}

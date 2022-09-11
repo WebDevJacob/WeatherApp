@@ -1,0 +1,48 @@
+@mixin card($width-percent, $br, $shadow-xy) {
+  position: relative;
+  width: $width-percent;
+  margin: 1rem auto;
+  border-radius: $br;
+  padding: 1rem;
+  background-color: $clr-card-dark;
+  box-shadow: $shadow-xy $shadow-xy 4px 0 rgba($color: #000000, $alpha: 0.2),
+    2px 2px 4px 2px rgba($color: $clr-secondary, $alpha: 0.4);
+}
+
+@mixin speech-bubble {
+  position: absolute;
+  padding: 0.5rem;
+  background-color: $clr-primary;
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 4px 0 rgba($color: #000000, $alpha: 0.2),
+    2px 2px 4px 2px rgba($color: $clr-secondary, $alpha: 0.4);
+  z-index: 2000;
+  display: grid;
+  place-items: center;
+}
+
+@mixin gradientText($gradient) {
+  font-weight: bold;
+  background: $gradient;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  & * {
+    color: transparent;
+  }
+}
+
+@mixin gradientBg($gradient, $darken: true) {
+  background-image: $gradient;
+
+  @if $darken {
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: #00000077;
+      height: inherit;
+      border-radius: inherit;
+    }
+  }
+}

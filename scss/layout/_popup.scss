@@ -1,0 +1,159 @@
+.location-popup {
+  position: fixed;
+  inset: 0;
+  max-width: 700px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 1000;
+  padding: 3rem 1.5rem 3rem 1.5rem;
+  background-color: $clr-body;
+  transition: transform 0.4s ease-in-out;
+  transform: translateX(-100%);
+
+  &.active {
+    transform: translateX(0);
+  }
+}
+
+.location-info {
+  @include card(100%, 1rem, 2px);
+  @include gradientBg($dark-gradient);
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    background-image: url("/icons/pin-map.svg");
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 80px;
+  }
+
+  span {
+    line-height: 1.5rem;
+    isolation: isolate;
+  }
+
+  span::first-line {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+}
+
+.loc-btn-slider {
+  background-color: $clr-secondary;
+  border-radius: 50rem;
+  margin: 1rem 0;
+  position: relative;
+  height: 4rem;
+
+  &::after,
+  &::before {
+    content: "-->";
+    z-index: 1;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    color: $clr-grey;
+  }
+
+  &::before {
+    content: "<--";
+    left: 1rem;
+  }
+}
+
+.search {
+  .inputs {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 1rem;
+  }
+
+  .location-search {
+    @include card(100%, 50rem, 2px);
+    border: none;
+    outline: none;
+    margin: 0;
+    height: 4rem;
+
+    &::-webkit-search-cancel-button {
+      display: none;
+    }
+
+    &::placeholder {
+      color: $clr-text-light;
+      opacity: 0.8;
+    }
+
+    &.saving-search {
+      box-shadow: 0 0 2px 2px hsl(20, 100%, 50%), 0 0 2px 2px hsl(40, 100%, 50%);
+    }
+  }
+}
+
+.saved-locations {
+  display: flex;
+  flex-flow: column nowrap;
+  align-content: flex-start;
+  overflow: hidden auto;
+  gap: 0.75rem;
+  height: 50vh;
+  padding: 0.2rem;
+}
+
+.save-new {
+  @include card(100%, 0.5rem, 1px);
+  background-color: $clr-secondary;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  span {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+.info-banner {
+  @include card(98%, 0.5rem, 1px);
+  margin: 0 auto;
+  position: fixed;
+  bottom: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  line-height: 1.5rem;
+  box-shadow: none;
+
+  &.active {
+    display: flex;
+  }
+
+  &.error {
+    background-color: $clr-error;
+  }
+
+  &.success {
+    background-color: $clr-success;
+  }
+
+  &.info {
+    background-color: $clr-warning;
+    span,
+    i {
+      color: #000;
+    }
+  }
+}

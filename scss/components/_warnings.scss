@@ -1,0 +1,49 @@
+.warnings {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  height: 5rem;
+  position: relative;
+  overflow-x: auto;
+  padding-left: 3rem;
+
+  li {
+    display: grid;
+    place-items: center;
+
+    & i {
+      color: $clr-success;
+    }
+    &[data-severity] {
+      text-shadow: 1px 1px 1px $clr-secondary;
+    }
+
+    &[data-severity="med"] i {
+      color: $clr-warning;
+    }
+
+    &[data-severity="high"] i {
+      color: $clr-error;
+    }
+  }
+
+  li:first-child {
+    position: absolute;
+    left: 0.5rem;
+    box-shadow: 1px 1px 4px 1px $clr-secondary;
+
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: $clr-warning;
+    @include gradientBg($warm-gradient, false);
+    display: grid;
+    place-items: center;
+
+    i {
+      font-size: 1.75rem;
+      color: $clr-text-light;
+    }
+  }
+}

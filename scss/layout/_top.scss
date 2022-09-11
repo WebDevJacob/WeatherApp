@@ -1,0 +1,19 @@
+#top {
+  padding: 0 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  isolation: isolate;
+}
+
+.location {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  span {
+    font-size: 0.9rem;
+    font-weight: normal;
+  }
+}

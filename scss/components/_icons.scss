@@ -1,0 +1,83 @@
+#top i {
+  font-size: 2.5rem;
+}
+
+.info-banner i {
+  font-size: 1.25rem;
+}
+
+.icon i {
+  font-size: 7rem;
+}
+
+.curr-cards > * i {
+  font-size: 2.25rem;
+}
+
+.day-summary [data-icon] {
+  font-size: 1.5rem;
+
+  &[data-rotation] {
+    transform: rotate(180deg);
+  }
+}
+
+.warnings li i {
+  font-size: 2.25rem;
+}
+
+.small-card .icon-s {
+  @include gradientText($warm-gradient);
+  font-size: 2rem;
+}
+
+.rise i,
+.set i {
+  display: block;
+  font-size: 2.5rem;
+}
+
+// location popup
+
+.location-info i {
+  color: $clr-text-light;
+}
+
+.device-location i {
+  font-size: 1.75rem;
+}
+
+.search .search-icon i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 2rem;
+  font-size: 1.2rem;
+}
+
+.loc-card i {
+  font-size: 1.3rem;
+}
+
+.loc-weather i {
+  font-size: 3rem;
+}
+
+.save-new i {
+  color: inherit;
+  font-size: 3rem;
+}
+
+.location-close i {
+  font-size: 1.5rem;
+}
+
+// footer
+.etal i {
+  font-size: 2rem;
+}
+
+// .github i {
+//   font-size: 2.5rem;
+//   // text-shadow: 1px 1px 3px $clr-body;
+// }

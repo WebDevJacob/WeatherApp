@@ -1,0 +1,51 @@
+.table-wrapper {
+  @include card(100%, 0.5rem, 1px);
+  height: fit-content;
+  max-height: 250px;
+  overflow-y: auto;
+  padding: 1rem 0 0.5rem 0;
+  z-index: 1;
+  margin-top: -3rem;
+
+  &.hidden {
+    display: none;
+  }
+}
+
+.loc-search-results {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  border-collapse: collapse;
+  z-index: 2;
+
+  tbody {
+    max-height: 220px;
+    overflow-y: auto;
+  }
+
+  tr {
+    height: 3rem;
+
+    &:hover {
+      background-color: $clr-secondary;
+    }
+  }
+
+  th,
+  td {
+    text-align: left;
+    padding-left: 1rem;
+    vertical-align: center;
+  }
+
+  th {
+    @include gradientText($warm-gradient);
+    padding: 2rem 0 1rem 1rem;
+  }
+
+  td:last-child,
+  th:last-child {
+    display: none;
+  }
+}
