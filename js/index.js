@@ -1,3 +1,8 @@
+import getApiData, { getUserLocation } from "./weatherAPI.js";
+import getAirQualityApiData from "./airqualityAPI.js";
+import createAppCards from "./createCards.js";
+import { setLocationInfoText, loadLocCards } from "./locationAPI.js";
+
 // fallback location if none is saved (yet)
 const FALLBACK = {
   name: "Berlin",
@@ -8,16 +13,6 @@ const FALLBACK = {
   elevation: "38",
 };
 
-if (JSON.parse(localStorage.getItem("savedData")) == null) {
-  localStorage.setItem("savedData", JSON.stringify(FALLBACK));
-  setLocationInfoText(FALLBACK);
-}
-
-import getApiData, { getUserLocation } from "./weatherAPI.js";
-import getAirQualityApiData from "./airqualityAPI.js";
-import createAppCards from "./createCards.js";
-import { setLocationInfoText, loadLocCards } from "./locationAPI.js";
-
 const loading = document.querySelector(".loading");
 
 export const infoBanner = document.querySelector(".info-banner");
@@ -25,6 +20,19 @@ export const infoBannerIcon = infoBanner.querySelector("i");
 export const infoBannerSpan = infoBanner.querySelector("span");
 const infoBannerClose = infoBanner.querySelector("button");
 export const locationInfoSpan = document.querySelector(".location-info > span");
+
+const reloadBtn = document.querySelector(".reload");
+const lastUpdatedText = document.querySelector(".data-info span");
+
+const locationPopup = document.querySelector(".location-popup");
+const locationToggle = document.querySelector(".location-toggle");
+export const deviceLocationBtn = document.querySelector(".device-location");
+const locationClose = document.querySelector(".location-close");
+
+if (JSON.parse(localStorage.getItem("savedData")) == null) {
+  localStorage.setItem("savedData", JSON.stringify(FALLBACK));
+  setLocationInfoText(FALLBACK);
+}
 
 // get data and init app
 (async function () {
@@ -49,14 +57,6 @@ export const locationInfoSpan = document.querySelector(".location-info > span");
   // remove loading animation
   loading.classList.add("hidden");
 })();
-
-const reloadBtn = document.querySelector(".reload");
-const lastUpdatedText = document.querySelector(".data-info span");
-
-const locationPopup = document.querySelector(".location-popup");
-const locationToggle = document.querySelector(".location-toggle");
-export const deviceLocationBtn = document.querySelector(".device-location");
-const locationClose = document.querySelector(".location-close");
 
 locationToggle.onclick = () => {
   locationPopup.classList.add("active");
